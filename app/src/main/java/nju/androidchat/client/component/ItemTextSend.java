@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ public class ItemTextSend extends LinearLayout implements View.OnLongClickListen
         super(context);
         this.context = context;
         inflate(context, R.layout.item_text_send, this);
+        LinearLayout linearLayout = findViewById(R.id.chat_item_layout_content);
+        linearLayout.removeViewAt(1);
         this.textView = findViewById(R.id.chat_item_content_text);
         this.messageId = messageId;
         this.onRecallMessageRequested = onRecallMessageRequested;
